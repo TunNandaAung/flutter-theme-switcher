@@ -27,7 +27,7 @@ class PreferencePage extends StatelessWidget {
                 ),
                 onTap: () {
                   BlocProvider.of<ThemeBloc>(context)
-                      .dispatch(ThemeChanged(theme: itemAppTheme));
+                      .add(ThemeChanged(itemAppTheme));
                 },
               ),
             );

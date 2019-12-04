@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theme_switcher/preferenes.dart';
+import 'package:theme_switcher/ui/global/theme/app_theme.dart';
 import 'package:theme_switcher/ui/home/home_page.dart';
 
 import 'ui/global/theme/bloc/bloc.dart';
@@ -17,19 +18,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      builder: (context) => ThemeBloc(),
-      child: BlocBuilder<ThemeBloc, ThemeState>(
-        builder: _buildWithTheme,
-      ),
+      create: (context) => ThemeBloc(),
+      child: _buildWithTheme(context),
     );
   }
 
-  Widget _buildWithTheme(BuildContext context, ThemeState state) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      home: HomePage(),
-      theme: state.themeData,
-    );
+  Widget _buildWithTheme(BuildContext context) {
+    return BlocBuilder<ThemeBloc, AppTheme>(builder: (context, appTheme) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Material App',
+        home: HomePage(),
+        theme: appThemeData[appTheme],
+      );
+    });
   }
 }
