@@ -8,8 +8,9 @@ import 'package:theme_switcher/ui/home/home_page.dart';
 import 'ui/global/theme/bloc/bloc.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   Prefer.prefs = await SharedPreferences.getInstance();
-  Prefer.themeIndexPref = Prefer.prefs.getInt('theme');
+  Prefer.themeIndexPref = Prefer.prefs.getInt('theme') ?? 0;
 
   runApp(MyApp());
 }

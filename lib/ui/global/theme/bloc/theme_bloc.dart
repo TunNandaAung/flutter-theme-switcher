@@ -6,10 +6,7 @@ import 'package:theme_switcher/ui/global/theme/app_theme.dart';
 import './bloc.dart';
 
 class ThemeBloc extends Bloc<ThemeEvent, AppTheme> {
-  @override
-  AppTheme get initialState =>
-      // Everything is accessible from the appThemeData Map.
-      AppTheme.values[Prefer.themeIndexPref];
+  ThemeBloc() : super(AppTheme.values[Prefer.themeIndexPref]);
 
   @override
   Stream<AppTheme> mapEventToState(
