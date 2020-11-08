@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theme_switcher/ui/global/theme/app_theme.dart';
-import 'package:theme_switcher/ui/global/theme/bloc/bloc.dart';
+import 'package:theme_switcher/ui/global/theme/cubit/theme_cubit.dart';
 
 class PreferencePage extends StatelessWidget {
   const PreferencePage({Key key}) : super(key: key);
@@ -26,8 +26,7 @@ class PreferencePage extends StatelessWidget {
                   style: appThemeData[itemAppTheme].textTheme.bodyText1,
                 ),
                 onTap: () {
-                  BlocProvider.of<ThemeBloc>(context)
-                      .add(ThemeChanged(itemAppTheme));
+                  context.read<ThemeCubit>().changeTheme(itemAppTheme);
                 },
               ),
             );

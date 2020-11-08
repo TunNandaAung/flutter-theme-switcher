@@ -5,13 +5,12 @@ import 'package:theme_switcher/preferenes.dart';
 import 'package:theme_switcher/ui/global/theme/app_theme.dart';
 import 'package:theme_switcher/ui/home/home_page.dart';
 
-import 'ui/global/theme/bloc/bloc.dart';
+import 'ui/global/theme/cubit/theme_cubit.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Prefer.prefs = await SharedPreferences.getInstance();
   Prefer.themeIndexPref = Prefer.prefs.getInt('theme') ?? 0;
-
   runApp(MyApp());
 }
 
@@ -19,13 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ThemeBloc(),
+      create: (context) => ThemeCubit(),
       child: _buildWithTheme(context),
     );
   }
 
   Widget _buildWithTheme(BuildContext context) {
-    return BlocBuilder<ThemeBloc, AppTheme>(builder: (context, appTheme) {
+    return BlocBuilder<ThemeCubit, AppTheme>(builder: (context, appTheme) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Material App',
