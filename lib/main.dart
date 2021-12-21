@@ -10,7 +10,7 @@ import 'ui/global/theme/cubit/theme_cubit.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Prefer.prefs = await SharedPreferences.getInstance();
-  Prefer.themeIndexPref = Prefer.prefs.getInt('theme') ?? 0;
+  Prefer.themeIndexPref = Prefer.prefs!.getInt('theme') ?? 0;
   runApp(MyApp());
 }
 

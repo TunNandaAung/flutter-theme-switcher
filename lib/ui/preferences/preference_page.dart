@@ -4,7 +4,7 @@ import 'package:theme_switcher/ui/global/theme/app_theme.dart';
 import 'package:theme_switcher/ui/global/theme/cubit/theme_cubit.dart';
 
 class PreferencePage extends StatelessWidget {
-  const PreferencePage({Key key}) : super(key: key);
+  const PreferencePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,11 @@ class PreferencePage extends StatelessWidget {
             final itemAppTheme = AppTheme.values[index];
 
             return Card(
-              color: appThemeData[itemAppTheme].primaryColor,
+              color: appThemeData[itemAppTheme]!.primaryColor,
               child: ListTile(
                 title: Text(
                   itemAppTheme.toString(),
-                  style: appThemeData[itemAppTheme].textTheme.bodyText1,
+                  style: appThemeData[itemAppTheme]!.textTheme.bodyText1,
                 ),
                 onTap: () {
                   context.read<ThemeCubit>().changeTheme(itemAppTheme);
