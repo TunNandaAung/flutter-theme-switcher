@@ -22,8 +22,10 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text(Prefer.themeIndexPref.toString(),
-              style: Theme.of(context).textTheme.headline4),
+          child: Text(
+            Prefer.themeIndexPref.toString(),
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
         ),
       ),
     );

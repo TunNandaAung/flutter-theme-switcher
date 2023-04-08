@@ -9,6 +9,7 @@ class ThemeCubit extends Cubit<AppTheme> {
   Future<void> changeTheme(AppTheme theme) async {
     Prefer.prefs = await SharedPreferences.getInstance();
     Prefer.prefs!.setInt('theme', theme.index);
+    Prefer.themeIndexPref = theme.index;
     emit(theme);
   }
 }

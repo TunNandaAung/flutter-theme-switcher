@@ -23,7 +23,7 @@ class PreferencePage extends StatelessWidget {
               child: ListTile(
                 title: Text(
                   itemAppTheme.toString(),
-                  style: appThemeData[itemAppTheme]!.textTheme.bodyText1,
+                  style: appThemeData[itemAppTheme]!.textTheme.bodyLarge,
                 ),
                 onTap: () {
                   context.read<ThemeCubit>().changeTheme(itemAppTheme);
