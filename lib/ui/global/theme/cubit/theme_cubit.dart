@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theme_switcher/preferenes.dart';
 import 'package:theme_switcher/ui/global/theme/app_theme.dart';

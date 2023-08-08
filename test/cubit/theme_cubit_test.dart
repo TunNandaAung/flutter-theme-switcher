@@ -20,8 +20,8 @@ void main() {
   blocTest<ThemeCubit, AppTheme>(
     'emits updated theme when theme is changed',
     build: () => ThemeCubit(),
-    act: (cubit) => cubit.changeTheme(AppTheme.BlueDark),
-    expect: () => const <AppTheme>[AppTheme.BlueDark],
+    act: (cubit) => cubit.changeTheme(AppTheme.blueDark),
+    expect: () => const <AppTheme>[AppTheme.blueDark],
   );
 
   blocTest<ThemeCubit, AppTheme>(

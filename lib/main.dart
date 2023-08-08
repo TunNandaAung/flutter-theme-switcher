@@ -11,10 +11,12 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Prefer.prefs = await SharedPreferences.getInstance();
   Prefer.themeIndexPref = Prefer.prefs!.getInt('theme') ?? 0;
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Material App',
-        home: HomePage(),
+        home: const HomePage(),
         theme: appThemeData[appTheme],
       );
     });

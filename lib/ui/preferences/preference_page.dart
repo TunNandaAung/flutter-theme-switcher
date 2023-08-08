@@ -10,10 +10,10 @@ class PreferencePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Preferences'),
+          title: const Text('Preferences'),
         ),
         body: ListView.builder(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           itemCount: AppTheme.values.length,
           itemBuilder: (context, index) {
             final itemAppTheme = AppTheme.values[index];
