@@ -4,7 +4,7 @@ import 'package:theme_switcher/ui/global/theme/app_theme.dart';
 import 'package:theme_switcher/ui/global/theme/cubit/theme_cubit.dart';
 
 class PreferencePage extends StatelessWidget {
-  const PreferencePage({Key? key}) : super(key: key);
+  const PreferencePage({super.key});
 
   @override
   Widget build(BuildContext context) {
